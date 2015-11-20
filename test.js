@@ -1,31 +1,10 @@
+/*eslint no-new-object:0, no-array-constructor:0 */
 'use strict';
-/*
-======== A Handy Little Nodeunit Reference ========
-https://github.com/caolan/nodeunit
-
-Test methods:
-	test.expect(numAssertions)
-	test.done()
-Test assertions:
-	test.ok(value, [message])
-	test.equal(actual, expected, [message])
-	test.notEqual(actual, expected, [message])
-	test.deepEqual(actual, expected, [message])
-	test.notDeepEqual(actual, expected, [message])
-	test.strictEqual(actual, expected, [message])
-	test.notStrictEqual(actual, expected, [message])
-	test.throws(block, [error], [message])
-	test.doesNotThrow(block, [error], [message])
-	test.ifError(value)
-*/
+var expect = require('chai').expect;
 var getType = require('./index.js');
 
-exports['object-path-get'] = {
-	setUp: function (done) {
-		// setup here
-		done();
-	},
-	'types': function (test) {
+describe('get-object-type', function () {
+	it('should return the correct types', function () {
 		var tests = [
 			[new Date(), 'Date'],
 			['foo', 'String'],
@@ -40,11 +19,9 @@ exports['object-path-get'] = {
 			[[], 'Array'],
 			[new Array(), 'Array']
 		];
-		test.expect(tests.length);
-		tests.forEach(function (item, i) {
+		tests.forEach(function (item) {
 			var result = getType(item[0]);
-			test.equal(result, item[1], 'expecting: ' + item[1] + 'from test #' + i + ', got: ' + result);
+			expect(result).to.equal(item[1]);
 		});
-		test.done();
-	}
-};
+	});
+});
