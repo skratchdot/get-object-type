@@ -29,6 +29,11 @@ getType({foo: 'bar'}); // returns 'Object'
 getType(42); // returns 'Number'
 ```
 
+
+## Links
+
+- [Source Code](https://github.com/skratchdot/get-object-type)
+- [Changelog](https://github.com/skratchdot/get-object-type/blob/master/CHANGELOG.md)
 - [Live example on Tonic](https://tonicdev.com/npm/get-object-type)
 
 
