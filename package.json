@@ -33,7 +33,7 @@
     "npm-run-all": "^3.0.0",
     "nyc": "^8.1.0",
     "rimraf": "^2.5.4",
-    "watch": "^0.19.2"
+    "watch": "^1.0.0"
   },
   "tonicExampleFilename": ".tonic.example.js",
   "nyc": {
