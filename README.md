@@ -14,7 +14,7 @@
 
 get the type of a javascript object as a string.  an alternative to using typeof checks.
 
-NOTE: I've re-written / used this function so many different times, I decided to publish it
+NOTE: I've googled / re-written / used this function so many different times, I decided to publish it
 as a module.
 
 ## Getting Started
@@ -27,6 +27,17 @@ getType(null); // returns 'Null'
 getType([]); // returns 'Array'
 getType({foo: 'bar'}); // returns 'Object'
 getType(42); // returns 'Number'
+
+// this modules works differently than the standard typeof operator
+var d = new Date();
+typeof(d);  // returns 'object'
+getType(d); // returns 'Date'
+
+typeof(null);  // returns 'object'
+getType(null); // returns 'Null'
+
+typeof({});  // returns 'object'
+getType({}); // returns 'Object'
 ```
 
 
